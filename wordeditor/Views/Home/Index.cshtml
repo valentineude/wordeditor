@@ -1,0 +1,24 @@
+﻿@model wordeditor.Models.editorModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form asp-action="SaveText" asp-controller="Home" method="post">
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">Adding editor on asp.net application</a>.</p>
+</div>
+<div id="sample">
+
+
+  <textarea name="@Model.des" style="width: 300px; height: 100px;"id="Description" na class="ckeditor" asp-for="@Model.des" >
+</textarea>
+</div>
+<button type="submit">Submit</button>
+</form>
+ <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+<script>
+$(document).ready(function () {
+        CKEDITOR.replace('#Description');
+    });
+</script>
